@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex notes"] 1650728702 "notes.aux" "notes.bbl" "notes" 1650728717
+["bibtex notes"] 1650728986 "notes.aux" "notes.bbl" "notes" 1650729210
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "cite.bib" 1650724588 15611 770372a6fb3f2e45386d2a66176528bf ""
-  "notes.aux" 1650728717 4353 cbd8e04111272acce05e852f0c5bab62 "pdflatex"
+  "cite.bib" 1650728926 24945 a6b366b930709e7a13b886f2a27a46b3 ""
+  "notes.aux" 1650729210 4529 5a5a1aae0f56de500d29f2582efd70cf "pdflatex"
   (generated)
   "notes.bbl"
   "notes.blg"
-["pdflatex"] 1650728717 "notes.tex" "notes.pdf" "notes" 1650728717
+["pdflatex"] 1650729209 "notes.tex" "notes.pdf" "notes" 1650729210
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
@@ -193,10 +193,10 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1649284971 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1649284999 2826434 a71ceace8422eb2de35f7fe614110dc7 ""
   "/usr/local/texlive/2022/texmf.cnf" 1649284969 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "notes.aux" 1650728717 4353 cbd8e04111272acce05e852f0c5bab62 "pdflatex"
-  "notes.bbl" 1650728702 483 d8b88a41ee5894ec6eaab6f93acbe583 "bibtex notes"
-  "notes.out" 1650728717 3921 846acdc8c64b2991732438c124c7d4c0 "pdflatex"
-  "notes.tex" 1650728716 7380 db93df05b022d0c8b564f9edd0a9a7c6 ""
+  "notes.aux" 1650729210 4529 5a5a1aae0f56de500d29f2582efd70cf "pdflatex"
+  "notes.bbl" 1650728986 1311 8b2979a1caf1ccb4d4f3e07fb3b7a21e "bibtex notes"
+  "notes.out" 1650729210 3921 846acdc8c64b2991732438c124c7d4c0 "pdflatex"
+  "notes.tex" 1650729209 7601 296e987700bb50037753e30c0e917257 ""
   (generated)
   "notes.aux"
   "notes.log"

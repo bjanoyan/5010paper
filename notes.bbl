@@ -1,7 +1,11 @@
 \begin{thebibliography}{1}
 
-\bibitem{NYSERDA_new_nodate-1}
-New {York}'s {Offshore} {Wind} {Projects}.
+\bibitem{khan_modeling_2022}
+Muhammad~Hilal Khan, Azzam~Ul Asar, Nasim Ullah, Fahad~R. Albogamy, and
+  Muhammad~Kashif Rafique.
+\newblock Modeling and {Optimization} of {Smart} {Building} {Energy}
+  {Management} {System} {Considering} {Both} {Electrical} and {Thermal} {Load}.
+\newblock {\em Energies}, 15(2):574, January 2022.
 
 \bibitem{mitchell_review_2022}
 Daniel Mitchell, Jamie Blanche, Sam Harper, Theodore Lim, Ranjeetkumar Gupta,
@@ -9,5 +13,19 @@ Daniel Mitchell, Jamie Blanche, Sam Harper, Theodore Lim, Ranjeetkumar Gupta,
 \newblock A review: {Challenges} and opportunities for artificial intelligence
   and robotics in the offshore wind sector.
 \newblock {\em Energy and AI}, 8:100146, May 2022.
+
+\bibitem{sembroiz_planning_2019}
+David Sembroiz, Davide Careglio, Sergio Ricciardi, and Ugo Fiore.
+\newblock Planning and operational energy optimization solutions for smart
+  buildings.
+\newblock {\em Information Sciences}, 476:439--452, February 2019.
+
+\bibitem{yu_review_2021}
+Liang Yu, Shuqi Qin, Meng Zhang, Chao Shen, Tao Jiang, and Xiaohong Guan.
+\newblock A {Review} of {Deep} {Reinforcement} {Learning} for {Smart}
+  {Building} {Energy} {Management}.
+\newblock {\em IEEE Internet of Things Journal}, 8(15):12046--12063, August
+  2021.
+\newblock arXiv: 2008.05074.
 
 \end{thebibliography}

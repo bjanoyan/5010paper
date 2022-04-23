@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.6)  23 APR 2022 11:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.6)  23 APR 2022 11:53
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -812,6 +812,30 @@ Overfull \hbox (4.79297pt too wide) in paragraph at lines 128--128
  [] 
  []
 
+
+Package natbib Warning: Citation `NYSERDA_new_nodate-1' on page 1 undefined on input line 154.
+
+
+Package natbib Warning: Citation `NYSERDA_new_nodate-1' on page 1 undefined on input line 155.
+
+
+Package natbib Warning: Citation `NYSERDA_new_nodate-1' on page 1 undefined on input line 156.
+
+
+Package natbib Warning: Citation `NYSERDA_new_nodate-1' on page 1 undefined on input line 157.
+
+
+Package natbib Warning: Citation `NYSERDA_new_nodate-1' on page 1 undefined on input line 162.
+
+
+Package natbib Warning: Citation `NYSERDA_new_nodate-1' on page 1 undefined on input line 165.
+
+
+Package natbib Warning: Citation `NYSERDA_new_nodate-1' on page 1 undefined on input line 167.
+
+
+Package natbib Warning: Citation `NYSERDA_new_nodate-1' on page 1 undefined on input line 169.
+
 [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
@@ -821,23 +845,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--213
 
  []
 
-[2] (./notes.bbl) [3] (./notes.aux)
+[2] (./notes.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[3] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: 846ACDC8C64B2991732438C124C7D4C0;3921.
  ) 
 Here is how much of TeX's memory you used:
- 27595 strings out of 478268
- 540278 string characters out of 5846354
- 927929 words of memory out of 5000000
- 45270 multiletter control sequences out of 15000+600000
+ 27603 strings out of 478268
+ 540472 string characters out of 5846354
+ 927959 words of memory out of 5000000
+ 45276 multiletter control sequences out of 15000+600000
  475386 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  120i,6n,126p,447b,385s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on notes.pdf (3 pages, 137758 bytes).
+Output written on notes.pdf (3 pages, 140229 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 201 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
  213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
