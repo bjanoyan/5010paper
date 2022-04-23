@@ -1,0 +1,226 @@
+\documentclass[plain]{article}
+\usepackage{lipsum}
+\setlength{\oddsidemargin}{0.25 in}
+\setlength{\evensidemargin}{-0.25 in}
+\setlength{\topmargin}{-0.6 in}
+\setlength{\headsep}{0.75 in}
+\setlength{\parindent}{0 in}
+\textwidth 6.4in
+\textheight 9in
+\parskip 1ex
+\usepackage[framemethod=TikZ]{mdframed}
+%
+% ADD PACKAGES here:
+
+ \newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\Ex}{\mathbb{E}}
+\usepackage{psfrag}
+\usepackage{amsmath,amsfonts,graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{flexisym}
+\usepackage[short]{optidef}
+\usepackage{caption}
+\usepackage{subcaption}
+\usetikzlibrary{shapes,arrows,calc}
+\newtheorem{thm}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem{defin}{Definition}
+\newtheorem{defn}{Definition}
+\newtheorem{rem}{Remark}
+\usepackage{framed}
+\newcommand{\Pd}{\mathbb{P}}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{fact}{Fact}
+\usepackage{natbib}
+ \newcounter{lecnum}
+
+\newcommand{\EE}{ \mathsf{E} }
+\newcommand{\Var}{ \mbox{Var} }
+\newcommand{\Cov}{ \mbox{Cov} }
+\newcommand{\1}{\mathbbm{1}}
+\newcommand{\Prob}{ \mathsf{P} }
+\newcommand{\disfrac}[2]{ {\displaystyle \frac{#1}{#2}} }
+\newcommand{\texfrac}[2]{ {\textstyle \frac{#1}{#2}} }
+\newcommand{\dissum}[2]{ {\displaystyle \sum_{#1}^{#2}} }
+\newcommand{\OR}{ \mbox{~or~} }
+\newcommand{\cond}[1]{ \left|\,#1\right. }
+\newcommand{\ith}[1]{ #1^{\mbox{\tiny th}} }
+\newcommand{\matgen}[1]{ \left[ \begin{array}#1 \end{array} \right] }
+
+\newcommand{\RR}{ {\bf R} }
+\newcommand{\NN}{ {\bf N} }
+\newcommand{\II}{ {\bf I} }
+\newcommand{\ee}{ {\bf e} }
+\newcommand{\LL}{ {\bf L} }
+\newcommand{\PP}{ {\bf P} }
+\newcommand{\calF}{ {\cal F} }
+\newcommand{\One}{ \mbox{\sffamily 1} }
+\newcommand{\ZZ}{ {\bf Z} }
+\newcommand\E{\mathbb{E}}
+
+\newcommand{\R}{{\sf R\hspace*{-0.9ex}%
+\rule{0.15ex}{1.5ex}\hspace*{0.9ex}}}
+\newcommand{\N}{{\sf N\hspace*{-1.0ex}%
+\rule{0.15ex}{1.3ex}\hspace*{1.0ex}}}
+\newcommand{\Q}{{\sf Q\hspace*{-1.1ex}%
+\rule{0.15ex}{1.5ex}\hspace*{1.1ex}}}
+\newcommand{\C}{{\sf C\hspace*{-0.9ex}%
+\rule{0.15ex}{1.3ex}\hspace*{0.9ex}}}
+
+\newcommand{\ds}{ \displaystyle }
+\bibliographystyle{plain}
+%
+% The following macro is used to generate the header.
+%
+\newcommand{\lecture}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf Subject}
+	\hfill \today} 
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill #1  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\hfill \it } }
+      \vspace{2mm}
+       \hbox to 6.28in { {\hfill \it Author: #2} }
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{#1 (#2)}{#1}
+   \vspace*{4mm}
+}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+
+\let\b\mathbf
+
+%Use this command for a figure; it puts a figure in wherever you want it.
+%usage: \fig{NUMBER}{SPACE-IN-INCHES}{CAPTION}
+\newcommand{\fig}[3]{
+			\vspace{#2}
+			\begin{center}
+			Figure \thelecnum.#1:~#3
+			\end{center}
+	}
+
+\newtheorem{theorem}{Theorem}[lecnum]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+
+\begin{document}
+\lecture{Notes}{Bryan Tantisujjatham}{1}
+
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+%\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\author{Bryan Tantisujjatham}
+\date{\today}
+
+\section{Carbon Free Emissions Plan}
+\section{Nationwide Trends}
+
+\section{Current Statistics}
+
+
+\section{Quantitative Data Analysis}
+Population of NYS 19.45 million as of 2019 (cite census)
+Population of NYC 8.149 million as of 2019 (cite census)
+
+\section{New sources of generation}
+\subsection{Wind}
+\subsubsection{Land}
+
+\subsubsection{Offshore}
+New offshore wind projects in pipeline:
+\begin{enumerate}
+	\item \textbf{Empire Wind 1}: 816 MW, solicited 2018 \cite{NYSERDA_new_nodate-1}
+	\item 	\textbf{Empire Wind 2}: 1260 MW, solicited 2020 \cite{NYSERDA_new_nodate-1}
+	\item \textbf{Sunrise Wind}: 880 MW, solicited 2018 \cite{NYSERDA_new_nodate-1}
+	\item \textbf{Beacon Wind}: 1230 MW, solicited 2020 \cite{NYSERDA_new_nodate-1}
+\end{enumerate}
+
+5 total projects totaling greater than 4300 MW, leading offshore generation pipeline in the nation
+
+Official target goal for offshore wind generation is 9000 MW by 2035. \cite{NYSERDA_new_nodate-1}
+
+Substation Locations: Astoria Substation, Gowanus Substation, Barrett Substation, Holbrook Substation, East Hampton Substation\\
+Proposed Port Facilities: South Brooklyn Marine Terminal, Holbrook Substation, East Hampton Substation. \cite{NYSERDA_new_nodate-1}
+
+All projects are currently in the data collection phase. \cite{NYSERDA_new_nodate-1}
+
+NYSERDA offers contracts to purchase offshore renewable energy certificates (OREC) from offshore wind developers. NYSERDA sells these to load serving entities (LSEs) like utilities, which are required by law to purchase renewable energy credits. \cite{NYSERDA_new_nodate-1}
+
+\subsubsection{Technology \& Implementation}
+Advances in:
+\begin{enumerate}
+	\item Materials
+	\item Engineering of turbine foudnations
+	\item Turbine blade design
+\end{enumerate}
+
+With respect to foundations: \cite{mitchell_review_2022}
+\begin{enumerate}
+	\item Monopiles - for depths up to 25m. Freestanding; cheap, easy to install and inexpensive to manufacture and transport. Used in 95\& of installations worldwide.
+	\item Gravity - also for up to 25m, but used for les cohesive seabed compositions
+	\item Suction bucket - Can also be cost effective, but oly for appropriate choice of seabed composition
+	\item Deepwater - 
+	\item Tripod - 30m - 60m water depth
+	\item Jacket - > 50m water depth. Expensive and complex to install and manufacture; however, mature
+\end{enumerate}
+\subsubsection{Geography of the Long-Island Area}
+
+\subsection{Solar}
+Official target: 10GW distributed solar by 2030 (cite NYSERDA)\\
+Government sponsored incentives via tax credits, NYSun
+
+\subsection{Geothermal}
+\section{Maintenance of mature technologies and infrastructure}
+\subsection{Nuclear}
+
+
+
+\section{Policy Changes}
+NYSERDA energy credits:
+	\begin{enumerate}
+		\item Tier 1 (new renewables)
+		\item Tier 2 (maintenance resources)
+		\item Tier 2 (competitive program)
+		\item Tier 4 (NYC renewable energy)
+	\end{enumerate}
+\subsection{Pricing Changes}
+\subsection{Economic viability}
+Need Fair distribution of costs between ISOs and RTOs. \cite{mitchell_review_2022}\\
+Renewable Portfolio Standards\\
+Aggressive federal support amenable to policy decision to focus on offshore wind -- allows ISOs to reach LCOE  levels for offshore installation costs similar to those seen in the UK, given the tax subsidies \cite{mitchell_review_2022}\\
+
+\section{Changes in practical implementation}
+\subsection{Changes in control}
+
+\section{Viability (outside of financial)}
+\subsection{Resource constraints}
+\subsection{Trend constraints}
+\subsection{Location constraints}
+\section{Literature Review}
+
+\section{Main points (for slide)}
+
+\bibliography{cite}
+\end{document}

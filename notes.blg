@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: notes.aux
+The style file: plain.bst
+Database file #1: cite.bib
+Warning--to sort, need author or key in NYSERDA_new_nodate-1
+You've used 2 entries,
+            2118 wiz_defined-function locations,
+            508 strings with 4409 characters,
+and the built_in function-call counts, 726 in all, are:
+= -- 58
+> -- 54
+< -- 0
++ -- 23
+- -- 20
+* -- 63
+:= -- 124
+add.period$ -- 4
+call.type$ -- 2
+change.case$ -- 16
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 18
+empty$ -- 49
+format.name$ -- 20
+if$ -- 141
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 11
+num.names$ -- 2
+pop$ -- 19
+preamble$ -- 1
+purify$ -- 14
+quote$ -- 0
+skip$ -- 17
+stack$ -- 0
+substring$ -- 29
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 1
+while$ -- 3
+width$ -- 3
+write$ -- 18
+(There was 1 warning)
