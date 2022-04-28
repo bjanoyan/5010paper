@@ -145,8 +145,17 @@
 Population of NYS 19.45 million as of 2019 \cite{noauthor_us_nodate}\\
 Population of NYC 8.149 million as of 2019 (cite census)\\
 
-\section{Electricity Demand Forecast}
+\begin{align*}
+	\text{LCOE} = \frac{\text{total annualized cost}}{\text{total annual energy output}}	
+.\end{align*}
 
+LCOE should be around 63/MWh for hydro, 32/MWh for land wind, 96/MWh for offshore-wind, 41/MWh for utility solar, 73/MWh for community distributed solar, 297/MWh based on 2019 NYISO numbers
+\section{Electricity Demand Forecast}
+Hyperparameter Tuning, 4 Linear layers with Dropout = 0.3 and ReLU activation \\
+Batch size is 64, hidden dim is 64
+\todo{dataset description}
+\subsection{Related Methods}
+Fuzzy logic, genetic algorithms, regression
 \subsection{Methods}
 \subsection{ARIMA}
 \begin{align*}
@@ -170,7 +179,6 @@ Dual Formulation:
 	\label{fig:}
 
 \end{figure}
-\section{Levelized Cost of Energy}
 \subsection{LSTM}
 \begin{align*}
 f_{t} &=\sigma_{g}\left(W_{f} x_{t}+U_{f} c_{t-1}+b_{f}\right) \\
@@ -179,18 +187,20 @@ o_{t} &=\sigma_{g}\left(W_{o} x_{t}+U_{o} c_{t-1}+b_{o}\right) \\
 c_{t} &=f_{t} \circ c_{t-1}+i_{t} \circ \sigma_{c}\left(W_{c} x_{t}+b_{c}\right) \\
 h_{t} &=o_{t} \circ \sigma_{h}\left(c_{t}\right)
 \end{align*}
+\section{Levelized Cost of Energy}
+
 \section{New sources of generation}
 \subsection{Wind}
 \subsubsection{Land}
 
 \subsubsection{Offshore}
 New offshore wind projects in pipeline:
-\begin{enumerate}
+\begin{tightlist}
 	\item \textbf{Empire Wind 1}: 816 MW, solicited 2018 \cite{noauthor_new_nodate-1}
 	\item 	\textbf{Empire Wind 2}: 1260 MW, solicited 2020 \cite{noauthor_new_nodate-1}
 	\item \textbf{Sunrise Wind}: 880 MW, solicited 2018 \cite{noauthor_new_nodate-1}
 	\item \textbf{Beacon Wind}: 1230 MW, solicited 2020 \cite{noauthor_new_nodate-1}
-\end{enumerate}
+\end{tightlist}
 
 5 total projects totaling greater than 4300 MW, leading offshore generation pipeline in the nation
 
@@ -281,7 +291,6 @@ Recent innovations in in statistical modeling, in particular data-driven optimiz
 
 Interst in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}. \todo{more RL citations}. 
 
-\section{Main points (for slide)}
-
+\section{Limitations}
 \bibliography{cite}
 \end{document}
