@@ -13,7 +13,7 @@
 % ADD PACKAGES here:
 
  \newcommand{\argmax}{\operatornamewithlimits{argmax}}
- \usepackage{todonotes}
+ \usepackage[colorinlistoftodos]{todonotes}
 \newcommand{\Ex}{\mathbb{E}}
 \usepackage{psfrag}
 \usepackage{amsmath,amsfonts,graphicx}
@@ -135,6 +135,8 @@
 \author{Bryan Tantisujjatham}
 \date{\today}
 
+\todototoc
+\listoftodos
 \section{Carbon Free Emissions Plan}
 \section{Nationwide Trends}
 
@@ -151,9 +153,21 @@ Population of NYC 8.149 million as of 2019 (cite census)\\
 
 LCOE should be around 63/MWh for hydro, 32/MWh for land wind, 96/MWh for offshore-wind, 41/MWh for utility solar, 73/MWh for community distributed solar, 297/MWh based on 2019 NYISO numbers
 \section{Electricity Demand Forecast}
+\section{Need}
+Amount of dispatchable need increases to 32,000 MW in 2040 under CLCPA assumptions
+
+Load: Climiate change and electrification results in increase in summer load\\
+Electrification will transition NY from summer peaking to winter peaking
+Winter peak load under CLCPA will dobule
+Projected by 2040: 47KMW, winter peak over 57kMW
+\\
+Need for dispatchable resources that perform on a multi-day period to maintain bulk power system reliability. No commercially available systems.\\
+
+Analysis of load, generation, demand, transmission
+
 Hyperparameter Tuning, 4 Linear layers with Dropout = 0.3 and ReLU activation \\
 Batch size is 64, hidden dim is 64
-\todo{dataset description}
+\todo{include dataset description}
 \subsection{Related Methods}
 Fuzzy logic, genetic algorithms, regression
 \subsection{Methods}
