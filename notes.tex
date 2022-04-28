@@ -153,6 +153,12 @@ Population of NYC 8.149 million as of 2019 (cite census)\\
 
 LCOE should be around 63/MWh for hydro, 32/MWh for land wind, 96/MWh for offshore-wind, 41/MWh for utility solar, 73/MWh for community distributed solar, 297/MWh based on 2019 NYISO numbers
 \section{Electricity Demand Forecast}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{load_zones.png}
+	\caption{}
+	\label{fig:}
+\end{figure}
 \section{Need}
 Amount of dispatchable need increases to 32,000 MW in 2040 under CLCPA assumptions
 
@@ -163,8 +169,23 @@ Projected by 2040: 47KMW, winter peak over 57kMW
 \\
 Need for dispatchable resources that perform on a multi-day period to maintain bulk power system reliability. No commercially available systems.\\
 
+Increased need for transmission systems that accomodate more quantities of dispatchable energy.\\
+We require the dispatchable resources to be fossil fuel free, and accomodate high ramping requirements as seen for sun and wind resources.\\
+Reliability metrics: \textbf{transmission security} and \textbf{resource adequacy}.\\
+Transmission security margins: \textbf{how robust the model is to distributional shift} \\
+Loss of load expectation (days per year) (LOLE)
+Loss of load hours (hours per year) (LOLH)\\
+Expected unserved energy (megawatt-hours per year)\\
+
+\subsection{Transmission}
+
+\subsection{Inverter based resources}
+wehoiw
+\section{Accounting for uncertainty in project planning}
+
 Analysis of load, generation, demand, transmission
 
+\section{NN Architecture}
 Hyperparameter Tuning, 4 Linear layers with Dropout = 0.3 and ReLU activation \\
 Batch size is 64, hidden dim is 64
 \todo{include dataset description}
@@ -172,10 +193,6 @@ Batch size is 64, hidden dim is 64
 Fuzzy logic, genetic algorithms, regression
 \subsection{Methods}
 \subsection{ARIMA}
-\begin{align*}
-&y_{t}^{*}=\Delta^{d} y_{t} \\
-&y_{t}^{*}=\mu+\underbrace{\sum_{i=1}^{p} \phi_{i} y_{t-i}^{*}}_{\mathrm{AR}}+\underbrace{\sum_{i=1}^{q} \theta_{i} \epsilon_{t-i}+\epsilon_{t}}_{\mathrm{MA}}
-\end{align*}
 \subsection{Support Vector Regression}
 Primal Formulation:
 \begin{figure}[H]
@@ -194,24 +211,16 @@ Dual Formulation:
 
 \end{figure}
 \subsection{LSTM}
-\begin{align*}
-f_{t} &=\sigma_{g}\left(W_{f} x_{t}+U_{f} c_{t-1}+b_{f}\right) \\
-i_{t} &=\sigma_{g}\left(W_{i} x_{t}+U_{i} c_{t-1}+b_{i}\right) \\
-o_{t} &=\sigma_{g}\left(W_{o} x_{t}+U_{o} c_{t-1}+b_{o}\right) \\
-c_{t} &=f_{t} \circ c_{t-1}+i_{t} \circ \sigma_{c}\left(W_{c} x_{t}+b_{c}\right) \\
-h_{t} &=o_{t} \circ \sigma_{h}\left(c_{t}\right)
-\end{align*}
-\section{Levelized Cost of Energy}
-
 \section{New sources of generation}
 \subsection{Wind}
+
 \subsubsection{Land}
 
 \subsubsection{Offshore}
 New offshore wind projects in pipeline:
 \begin{tightlist}
 	\item \textbf{Empire Wind 1}: 816 MW, solicited 2018 \cite{noauthor_new_nodate-1}
-	\item 	\textbf{Empire Wind 2}: 1260 MW, solicited 2020 \cite{noauthor_new_nodate-1}
+	\item \textbf{Empire Wind 2}: 1260 MW, solicited 2020 \cite{noauthor_new_nodate-1}
 	\item \textbf{Sunrise Wind}: 880 MW, solicited 2018 \cite{noauthor_new_nodate-1}
 	\item \textbf{Beacon Wind}: 1230 MW, solicited 2020 \cite{noauthor_new_nodate-1}
 \end{tightlist}
@@ -283,7 +292,18 @@ While the NYISO has released a comprehensive plan towards 70\% renewable energy 
 there are several areas which remain unexploited. Our work aims to assess these areas of untapped potential and improvements in policy that can be leveraged to accelerate progress towards this goal. We also provide a robust, quantitative analysis of projected energy demand and projected generation requirements needed to sustain this trend towards 100\% carbon-free electricity in the next eight years.
 
 \subsection{Statewide Energy Profile}
-New York has consistently met nearly 90\% of energy requirements through nuclear, hydropower and natural gas alone. [citation]
+New York has consistently met nearly 90\% of energy requirements through nuclear, hydropower and natural gas alone. [citation] 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{}
+	\caption{}
+	\label{fig:}
+\end{figure}
+
+\section{Transmission}
+
+
 \subsection{Technology}
 
 \subsection{Policy}
@@ -304,6 +324,40 @@ New York has consistently met nearly 90\% of energy requirements through nuclear
 Recent innovations in in statistical modeling, in particular data-driven optimization and machine learning, have severely overhauled the standard procedures for management of electricity on the grid. 
 
 Interst in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}. \todo{more RL citations}. 
+\section{Quantitative Analysis}
+We first sought to characterize the energy load, demand, transmission and generation profiles on annual and monthly timescales, as well as obtain projected estimates until 2030. 
+
+\subsubsection{ARIMA}
+ARIMA, or AutoRegressive Integrated Moving Average, is a commonly used method for time series analysis. Due to the diurnal nature of electricity demand, we implemented a seasonal ARIMA model. Formally, ARIMA is described by the equations
+\begin{align}
+&y_{t}^{*}=\Delta^{d} y_{t} \\
+&y_{t}^{*}=\mu+\underbrace{\sum_{i=1}^{p} \phi_{i} y_{t-i}^{*}}_{\mathrm{AR}}+\underbrace{\sum_{i=1}^{q} \theta_{i} \epsilon_{t-i}+\epsilon_{t}}_{\mathrm{MA}}
+\end{align}
+where $\mu$ denotes the mean.
+
+A seasonal arima model is of the form 
+\begin{align}
+	\text{ARIMA}(p,q) \times (P,Q)_s
+.\end{align}
+
+
+where 
+
+\subsubsection{LSTM}
+We additionally generated yearly predictions using a Long Short Term Memory RNN model, given that neural function approximation is more expressive and tends to lead to less generalization error than statistical regression techniques. Formally, an LSTM unit is described by the equations
+
+\begin{align}
+f_{t} &=\sigma_{g}\left(W_{f} x_{t}+U_{f} c_{t-1}+b_{f}\right) \\
+i_{t} &=\sigma_{g}\left(W_{i} x_{t}+U_{i} c_{t-1}+b_{i}\right) \\
+o_{t} &=\sigma_{g}\left(W_{o} x_{t}+U_{o} c_{t-1}+b_{o}\right) \\
+c_{t} &=f_{t} \circ c_{t-1}+i_{t} \circ \sigma_{c}\left(W_{c} x_{t}+b_{c}\right) \\
+h_{t} &=o_{t} \circ \sigma_{h}\left(c_{t}\right)
+\end{align}
+where $i$ denotes the input, $h$ denotes the output of the hidden layer, $o$ denotes the output of the output layer, and c and f are \todo{complete}.
+\subsubsection{Support Vector Regression}
+
+\subsubsection{Comparisons to Existing Models}
+
 
 \section{Limitations}
 \bibliography{cite}

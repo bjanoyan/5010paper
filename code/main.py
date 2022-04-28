@@ -9,6 +9,16 @@ import torch.nn as nn
 from dateutil import parser
 from datetime import datetime
 import matplotlib.ticker as ticker
+import statsmodels.api as sm
+from statsmodels.graphics.tsaplots import plot_acf
+from statsmodels.graphics.tsaplots import plot_pacf
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.ar_model import AR
+from statsmodels.tsa.arima_model import ARMA, ARIMA
+# from pyramid.arima import auto_arima
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+# from pyramid.arima import autoarima
 
 
 def ts(timescale):
@@ -47,13 +57,18 @@ def net_gen_all_fuels(timescale, num):
     return preprocess(data)
 
 
+def net_gen_per_fuel(fuel, timescale, num):
+    data = query('ELEC.GEN.' + fuel + '-NY-99.', timescale, num)
+    return preprocess(data)
+
+
 def net_demand_all_fuels(timescale, num):
     data = query('ELEC.GEN.ALL-NY-99.', timescale, num)
     return preprocess(data)
 
 
 def net_demand_per_fuel(fuel, timescale, num):
-    data = query('ELEC.GEN.ALL-NY-99.', timescale, num)
+    data = query('ELEC.GEN.' + fuel + '-NY-99.', timescale, num)
     return preprocess(data)
 
 
@@ -63,13 +78,14 @@ def total_consumption(timescale, num, btu=False):
     return Category(36)
 
 
-def net_consumption(timescale, num):
-    data = query('ELEC.CONS_EG.ALL-NY-98.', timescale, data)
+def net_consumption_per_fuel(fuel, timescale, num):
+    data = query('ELEC.CONS_EG.' + fuel + '-NY-99.', timescale, data)
     return preprocess(data)
 
 
 def net_consumption(timescale, num):
-    pass
+    data = query('ELEC.CONS_EG.ALL-NY-99.', timescale, data)
+    return preprocess(data)
 
 
 def avg_retail_price(timescale, num):
@@ -79,10 +95,11 @@ def avg_retail_price(timescale, num):
 
 data_funcs = {
     "gen": net_gen_all_fuels,
-    "dem": net_demand_all_fuels,
     "price": avg_retail_price,
     "cons": net_consumption,
-    "dem_per": net_demand_per_fuel
+    "cons_t": net_consumption_per_fuel,
+    "dem_per": net_demand_per_fuel,
+    "gen_per": net_gen_per_fuel,
 }
 
 fuel_types = [
@@ -127,7 +144,15 @@ def plot(category, timescale, num, type=None):
     plt.ylabel(units)
     plt.plot(data_x, data_y)
     plt.tight_layout()
-    plt.savefig('fig/' + type + category + "_" + timescale + ".png")
+    plt.savefig('fig/' + dir + category + "_" + timescale + ".png")
+
+
+def arima(train, n_periods):
+    model = auto_arima(train, trace=True, error_action='ignore',
+                       suppress_warnings=True, seasonal=True, m=6, stepwise=True)
+    model.fit(train)
+
+    return model.predict(n_periods=n_periods)
 
 
 def save():
@@ -141,17 +166,17 @@ if __name__ == "__main__":
     # Data Extraction and Charts
 
     # Generation
-    plot("gen", 'monthly')
-    plot('gen', 'annual')
+    plot("gen", 'monthly', 12*10)
+    plot('gen', 'annual', 20)
 
     # Generation per fuel type
     for type in fuel_types:
-        plot("gen", 'monthly', type)
-        plot('gen', 'annual', type)
+        plot("gen", 'monthly', 12*10, type)
+        plot('gen', 'annual', 20, type)
 
     # # Demand
-    plot('dem', 'monthly', 12*10)
-    plot('dem', 'annual', 20)
+    plot('cons', 'monthly', 12*10)
+    plot('cons', 'annual', 20)
 
     # Demand per fuel type
     for type in fuel_types:
