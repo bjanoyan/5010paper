@@ -5,7 +5,7 @@
 \setlength{\topmargin}{-0.6 in}
 \setlength{\headsep}{0.75 in}
 \setlength{\parindent}{0 in}
-\textwidth 6.4in
+\textwidth 6.1in
 \textheight 9in
 \parskip 1ex
 \usepackage[framemethod=TikZ]{mdframed}
@@ -145,12 +145,40 @@
 Population of NYS 19.45 million as of 2019 \cite{noauthor_us_nodate}\\
 Population of NYC 8.149 million as of 2019 (cite census)\\
 
-\section{ARIMA}
+\section{Electricity Demand Forecast}
 
-
-\section{ML-based}
+\subsection{Methods}
+\subsection{ARIMA}
+\begin{align*}
+&y_{t}^{*}=\Delta^{d} y_{t} \\
+&y_{t}^{*}=\mu+\underbrace{\sum_{i=1}^{p} \phi_{i} y_{t-i}^{*}}_{\mathrm{AR}}+\underbrace{\sum_{i=1}^{q} \theta_{i} \epsilon_{t-i}+\epsilon_{t}}_{\mathrm{MA}}
+\end{align*}
 \subsection{Support Vector Regression}
+Primal Formulation:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{svm_primal.PNG}
+	\caption{}
+	\label{fig:}
+\end{figure}
+
+Dual Formulation:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{svm_dual.PNG}
+	\caption{}
+	\label{fig:}
+
+\end{figure}
+\section{Levelized Cost of Energy}
 \subsection{LSTM}
+\begin{align*}
+f_{t} &=\sigma_{g}\left(W_{f} x_{t}+U_{f} c_{t-1}+b_{f}\right) \\
+i_{t} &=\sigma_{g}\left(W_{i} x_{t}+U_{i} c_{t-1}+b_{i}\right) \\
+o_{t} &=\sigma_{g}\left(W_{o} x_{t}+U_{o} c_{t-1}+b_{o}\right) \\
+c_{t} &=f_{t} \circ c_{t-1}+i_{t} \circ \sigma_{c}\left(W_{c} x_{t}+b_{c}\right) \\
+h_{t} &=o_{t} \circ \sigma_{h}\left(c_{t}\right)
+\end{align*}
 \section{New sources of generation}
 \subsection{Wind}
 \subsubsection{Land}
@@ -218,10 +246,6 @@ Need Fair distribution of costs between ISOs and RTOs. \cite{mitchell_review_202
 Renewable Portfolio Standards\\
 Aggressive federal support amenable to policy decision to focus on offshore wind -- allows ISOs to reach LCOE  levels for offshore installation costs similar to those seen in the UK, given the tax subsidies \cite{mitchell_review_2022}\\
 
-\section{Changes in practical implementation}
-\subsection{Changes in control}
-Better energy usage and demand prediction models.
-
 \section{Viability (outside of financial)}
 \subsection{Resource constraints}
 \subsection{Trend constraints}
@@ -255,7 +279,7 @@ New York has consistently met nearly 90\% of energy requirements through nuclear
 \subsection{Control}
 Recent innovations in in statistical modeling, in particular data-driven optimization and machine learning, have severely overhauled the standard procedures for management of electricity on the grid. 
 
-Interst in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control. \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}
+Interst in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}. \todo{more RL citations}. 
 
 \section{Main points (for slide)}
 
