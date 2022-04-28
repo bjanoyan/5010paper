@@ -101,6 +101,7 @@
    \markboth{#1 (#2)}{#1}
    \vspace*{4mm}
 }
+\usepackage{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp} % provide euro and other symbols
@@ -131,7 +132,6 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-%\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \author{Bryan Tantisujjatham}
 \date{\today}
 
@@ -142,9 +142,15 @@
 
 
 \section{Quantitative Data Analysis}
-Population of NYS 19.45 million as of 2019 (cite census)
-Population of NYC 8.149 million as of 2019 (cite census)
+Population of NYS 19.45 million as of 2019 \cite{noauthor_us_nodate}\\
+Population of NYC 8.149 million as of 2019 (cite census)\\
 
+\section{ARIMA}
+
+
+\section{ML-based}
+\subsection{Support Vector Regression}
+\subsection{LSTM}
 \section{New sources of generation}
 \subsection{Wind}
 \subsubsection{Land}
@@ -152,20 +158,20 @@ Population of NYC 8.149 million as of 2019 (cite census)
 \subsubsection{Offshore}
 New offshore wind projects in pipeline:
 \begin{enumerate}
-	\item \textbf{Empire Wind 1}: 816 MW, solicited 2018 \cite{NYSERDA_new_nodate-1}
-	\item 	\textbf{Empire Wind 2}: 1260 MW, solicited 2020 \cite{NYSERDA_new_nodate-1}
-	\item \textbf{Sunrise Wind}: 880 MW, solicited 2018 \cite{NYSERDA_new_nodate-1}
-	\item \textbf{Beacon Wind}: 1230 MW, solicited 2020 \cite{NYSERDA_new_nodate-1}
+	\item \textbf{Empire Wind 1}: 816 MW, solicited 2018 \cite{noauthor_new_nodate-1}
+	\item 	\textbf{Empire Wind 2}: 1260 MW, solicited 2020 \cite{noauthor_new_nodate-1}
+	\item \textbf{Sunrise Wind}: 880 MW, solicited 2018 \cite{noauthor_new_nodate-1}
+	\item \textbf{Beacon Wind}: 1230 MW, solicited 2020 \cite{noauthor_new_nodate-1}
 \end{enumerate}
 
 5 total projects totaling greater than 4300 MW, leading offshore generation pipeline in the nation
 
-Official target goal for offshore wind generation is 9000 MW by 2035. \cite{NYSERDA_new_nodate-1}
+Official target goal for offshore wind generation is 9000 MW by 2035. \cite{noauthor_us_nodate-1}
 
 Substation Locations: Astoria Substation, Gowanus Substation, Barrett Substation, Holbrook Substation, East Hampton Substation\\
-Proposed Port Facilities: South Brooklyn Marine Terminal, Holbrook Substation, East Hampton Substation. \cite{NYSERDA_new_nodate-1}
+Proposed Port Facilities: South Brooklyn Marine Terminal, Holbrook Substation, East Hampton Substation. \cite{noauthor_new_nodate-1}
 
-All projects are currently in the data collection phase. \cite{NYSERDA_new_nodate-1}
+All projects are currently in the data collection phase. \cite{noauthor_new_nodate-1}
 
 NYSERDA offers contracts to purchase offshore renewable energy certificates (OREC) from offshore wind developers. NYSERDA sells these to load serving entities (LSEs) like utilities, which are required by law to purchase renewable energy credits. \cite{NYSERDA_new_nodate-1}
 
@@ -214,7 +220,6 @@ Aggressive federal support amenable to policy decision to focus on offshore wind
 
 \section{Changes in practical implementation}
 \subsection{Changes in control}
-Demand for smart-buildings and online optimization techniques for realtime energy usage \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019} \\
 Better energy usage and demand prediction models.
 
 \section{Viability (outside of financial)}
@@ -227,7 +232,7 @@ The last two decades have brought marked improvements in energy efficient system
 The NYISO region is uniquely characterized by the speed at which it has adopted -- and integrated -- new technologies and developed infrastructure. It remains the only coal free region in the US, and leads the nation in installed capacity of several renewable sources -- most notably offshore wind [cite NYSERDA]. With five offshore wind projects in active development, New York is touted as the nation's "hub" for offshore wind, projecting to deliver approximately 4300 MW from these facilities alone, with goals to extend that to 9000 MW by 2040 \todo{citation}. Quite remarkably, New York consumes less total energy per capita than all but two states, and \todo{a little more here?}.
 
 While the NYISO has released a comprehensive plan towards 70\% renewable energy by 2030, and 100\% carbon-free electricity by 2040, 
-there are several areas which remain unexploited. Our work aims to assess these areas of untapped potential and improvements in policy that can be leveraged to accelerate this goal. We also provide a robust, quantitative analysis of projected energy demand and projected generation requirements needed to sustain this trend towards 100\% carbon-free electricity in the next eight years.
+there are several areas which remain unexploited. Our work aims to assess these areas of untapped potential and improvements in policy that can be leveraged to accelerate progress towards this goal. We also provide a robust, quantitative analysis of projected energy demand and projected generation requirements needed to sustain this trend towards 100\% carbon-free electricity in the next eight years.
 
 \subsection{Statewide Energy Profile}
 New York has consistently met nearly 90\% of energy requirements through nuclear, hydropower and natural gas alone. [citation]
@@ -235,13 +240,22 @@ New York has consistently met nearly 90\% of energy requirements through nuclear
 
 \subsection{Policy}
 \subsubsection{NYSUN}
-
-\subsubsection{}
+\begin{enumerate}
+	\item NYSun PV
+\end{enumerate}
+\subsubsection{Tax Credits and Subsidies}
+\begin{enumerate}
+	\item Solar Energy System Equipment Credits
+	\item OREC for offshore wind solicitatoins
+	\item 
+\end{enumerate}
 
 \subsection{Infrastructure}
 
 \subsection{Control}
+Recent innovations in in statistical modeling, in particular data-driven optimization and machine learning, have severely overhauled the standard procedures for management of electricity on the grid. 
 
+Interst in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control. \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}
 
 \section{Main points (for slide)}
 
