@@ -33,6 +33,7 @@ def ts(timescale):
 def preprocess(data):
     x = []
     y = []
+    print(data)
     raw_data = data['series'][0]['data']
     name = data['series'][0]['name'].split(" : ")
     name = name[0] + " " + "(" + name[-1] + ")"
@@ -79,13 +80,17 @@ def total_consumption(timescale, num, btu=False):
 
 
 def net_consumption_per_fuel(fuel, timescale, num):
-    data = query('ELEC.CONS_EG.' + fuel + '-NY-99.', timescale, data)
+    data = query('ELEC.CONS_EG.' + fuel + '-NY-99.', timescale, num)
     return preprocess(data)
 
 
 def net_consumption(timescale, num):
-    data = query('ELEC.CONS_EG.ALL-NY-99.', timescale, data)
+    data = query('ELEC.CONS_EG.ALL-NY-99.', timescale, num)
     return preprocess(data)
+
+
+def net_consumption_by_sector():
+    pass
 
 
 def avg_retail_price(timescale, num):
@@ -122,6 +127,10 @@ fuel_types = [
     "TSN",
     "DPV",
     "SUN"]
+
+cons_fuel_types = [
+    ""
+]
 
 
 def plot(category, timescale, num, type=None):
@@ -161,36 +170,60 @@ def save():
 
 if __name__ == "__main__":
 
-    plt.style.use('ggplot')
+    plt.style.use('seaborn')
 
     # Data Extraction and Charts
 
     # Generation
-    plot("gen", 'monthly', 12*10)
-    plot('gen', 'annual', 20)
+    # plot("gen", 'monthly', 12*10)
+    # plot('gen', 'annual', 20)
 
-    # Generation per fuel type
-    for type in fuel_types:
-        plot("gen", 'monthly', 12*10, type)
-        plot('gen', 'annual', 20, type)
+    # # Generation per fuel type
+    # for type in fuel_types:
+    #     plot("gen", 'monthly', 12*10, type)
+    #     plot('gen', 'annual', 20, type)
 
-    # # Demand
-    plot('cons', 'monthly', 12*10)
-    plot('cons', 'annual', 20)
+    # # Consumption
+    # plot('cons', 'monthly', 12*10)
+    # plot('cons', 'annual', 20)
 
-    # Demand per fuel type
-    for type in fuel_types:
-        plot("dem", 'monthly', 20 * 12, type)
-        plot('dem', 'annual', 12, type)
+    # # Demand per fuel type
+    # for type in fuel_types:
+    #     plot("cons_t", 'monthly', 20 * 12, type)
+    #     plot('cons_t', 'annual', 12, type)
 
     # Retail Price
-    plot('price', 'monthly', 20 * 12)
-    plot('price', 'annual', 20)
+    # plot('price', 'monthly', 20 * 12)
+    # plot('price', 'annual', 20)
 
-    # Consumption for Electricity Generation
-    plot('cons', 'monthly', 20*12)
-    plot('cons', 'annual', 20)
+    # # Consumption for Electricity Generation
+    # plot('cons', 'monthly', 20*12)
+    # plot('cons', 'annual', 20)
 
-   # Consumption for Electricity Generation per type
-    plot('cons', 'monthly', 20*12)
-    plot('cons', 'annual', 20)
+#    # Consumption for Electricity Generation per type
+#     plot('cons', 'monthly', 20*12)
+#     plot('cons', 'annual', 20)
+
+    # Electricity Generation by Source
+
+    plt.style.use('seaborn')
+    fig, ax = plt.subplots()
+
+    labels = ["Petroleum-Fired", "Natural Gas-Fired", "Nuclear",
+              "Hydroelectric", "Nonhydroelectric\nRenewables"]
+    vals = [1122, 4475, 2477, 2377, 704]
+
+    import seaborn as sns
+
+    sns.set(style="whitegrid")
+    # sns.set_color_codes("Spectral")
+
+    plt.figure(2, figsize=(15, 7))
+
+    sns.barplot(x=vals, y=labels, palette='Spectral')
+
+    plt.xlabel("thousand MWh")
+    plt.ylabel("Source")
+
+    plt.suptitle('NY State Net Electricity Generation by Source', fontsize=20)
+    plt.savefig('fig/elec_gen_by_source.png')
