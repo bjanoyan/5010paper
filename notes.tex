@@ -16,24 +16,18 @@
  \usepackage[colorinlistoftodos]{todonotes}
 \newcommand{\Ex}{\mathbb{E}}
 \usepackage{psfrag}
+\usepackage{optidef}
 \usepackage{amsmath,amsfonts,graphicx}
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{mathtools}
-\usepackage{bbm}
 \usepackage{hyperref}
-\usepackage{bm}
 \usepackage{float}
 \usepackage{flexisym}
 \usepackage[short]{optidef}
 \usepackage{caption}
 \usepackage{subcaption}
 \usetikzlibrary{shapes,arrows,calc}
-\newtheorem{thm}{Theorem}
-\newtheorem{example}{Example}
-\newtheorem{defin}{Definition}
-\newtheorem{defn}{Definition}
-\newtheorem{rem}{Remark}
 \usepackage{framed}
 \newcommand{\Pd}{\mathbb{P}}
 \newtheorem{algorithm}{Algorithm}
@@ -153,12 +147,6 @@ Population of NYC 8.149 million as of 2019 (cite census)\\
 
 LCOE should be around 63/MWh for hydro, 32/MWh for land wind, 96/MWh for offshore-wind, 41/MWh for utility solar, 73/MWh for community distributed solar, 297/MWh based on 2019 NYISO numbers
 \section{Electricity Demand Forecast}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{load_zones.png}
-	\caption{}
-	\label{fig:}
-\end{figure}
 \section{Need}
 Amount of dispatchable need increases to 32,000 MW in 2040 under CLCPA assumptions
 
@@ -188,13 +176,6 @@ Analysis of load, generation, demand, transmission
 \section{NN Architecture}
 Hyperparameter Tuning, 4 Linear layers with Dropout = 0.3 and ReLU activation \\
 Batch size is 64, hidden dim is 64
-\todo{include dataset description}
-\subsection{Related Methods}
-Fuzzy logic, genetic algorithms, regression
-\subsection{Methods}
-\subsection{ARIMA}
-\subsection{Support Vector Regression}
-\subsection{LSTM}
 \section{New sources of generation}
 \subsection{Wind}
 
@@ -270,15 +251,27 @@ Aggressive federal support amenable to policy decision to focus on offshore wind
 \section{Background}
 The last two decades have brought marked improvements in energy efficient systems and infrastructure on a global scale. The penetration profile of electricity generation sources has seen a nationwide trend towards renewable and "clean" energy source -- offshore wind, nuclear, biofuels, and geothermal -- and a complementary shift away from traditional fossil fuels. 
 
-The NYISO region is uniquely characterized by the speed at which it has adopted -- and integrated -- new technologies and developed infrastructure. It remains the only coal free region in the US, and leads the nation in installed capacity of several renewable sources -- most notably offshore wind \cite{noauthor_new_nodate-1} \todo{check citation}. With five offshore wind projects in active development, New York is touted as the nation's "hub" for offshore wind, projecting to deliver approximately 4300 MW from these facilities alone, with goals to extend that to 9000 MW by 2040 \todo{citation}. Quite remarkably, New York consumes less total energy per capita than all but two states, and \todo{a little more here?}.
+The NYISO region is uniquely characterized by the speed at which it has adopted -- and integrated -- new technologies and developed infrastructure. It remains the only coal free region in the US, and leads the nation in installed capacity of several renewable sources -- most notably offshore wind \cite{noauthor_new_nodate-1} \todo{check citation}. With five offshore wind projects in active development, New York is touted as the nation's "hub" for offshore wind, projecting to deliver approximately 4300 MW from these facilities alone, with goals to extend that to 9000 MW by 2040 \todo{citation}. Quite remarkably, New York consumes less total energy per capita than all but two states, and \todo{a little more here on adoption of other technologies (brief)?}.
 
 While the NYISO has released a comprehensive plan towards 70\% renewable energy by 2030, and 100\% carbon-free electricity by 2040, 
 there are several areas which remain unexploited. Our work aims to assess these areas of untapped potential and improvements in policy that can be leveraged to accelerate progress towards a more ambitious goal -- how the NYISO region can be \textit{fossil fuel free} by 2030. In particular, we \todo{cite main suggestions} We also provide a robust, quantitative analysis of projected energy demand and projected generation requirements needed to sustain this trend towards 100\% carbon-free electricity in the next eight years.
 
 \subsection{Statewide Energy Profile}
-New York has consistently met nearly 90\% of energy requirements through nuclear, hydropower and natural gas alone. In 2020, New York accounted for nearly 11\% of U.S. hydroelectricity generation, and was the third largest producer of hydroelectricity in the nation \todo{citation}.Renewable resources were responsible for nearly 60\% of electricity generation alone that same year. Figure 1 shows the profile of electricity generation distributed across different sources as of March 2022. The 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{load_zones.png}
+	\caption{Zoning of NYISO.}
+	\label{fig:}
+\end{figure}
 
-\missingfigure{}
+New York has consistently met nearly 90\% of energy requirements through nuclear, hydropower and natural gas alone. In 2020, New York accounted for nearly 11\% of U.S. hydroelectricity generation, and was the third largest producer of hydroelectricity in the nation \cite{nyserda_story_nodate}. Renewable resources were responsible for nearly 60\% of electricity generation alone that same year. \todo{change to ref}Figure 1 shows the profile of electricity generation distributed across different sources as of March 2022. The 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{elec_gen_by_source.png}
+	\caption{}
+	\label{fig:}
+\end{figure}
 In recent years, the distribution has undergone a marked shift away from nuclear. Indian Point, responsible for nearly 25\% of the state's electricity generation \cite{mcgeehan_indian_2021}, of carbon free electricity, permanently shut down by April 2021. With a capacity factor of nearly 90\%, facility delivered reliable base load electricity across the state, and its closure produced a void of approximately 2000MW of nuclear generating capacity. Since then, the share of the state's power from gas-fired generators has increased, jumping nearly 6\% since the closure of its last unit (Indian Point Unit 3) in 2021. \todo{double check statistics}.
 \\
 With regards to the cost of electricity, average retail price is the 8th highest in the nation as of 2022, fluctuating between 20 and 22 cents per kWh.
@@ -313,36 +306,78 @@ According to the Zero Emissions Electric grid in NY by 2040 study, New York is o
 	\item 
 \end{enumerate}
 
-\subsection{Infrastructure}
+\section{Infrastructure}
 
 \subsection{Control}
-Recent innovations in in statistical modeling, in particular data-driven optimization and machine learning, have severely overhauled the standard procedures and conventional lines of thinking for management of electricity on the grid. Interest in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}. \todo{more RL citations}. Closely related are the capacity to accurately monitor systems and detect real-time faults. According to Bloomberg New Energy finance, U.S. utilities invested approximately  \$3.4 billion in smart grid technologies at the distribution level, and since 2008, \$31.6 billion on the same, a much higher rate than initial forecasts. Smart grids promise to introduce several benefits on the control level, including increased efficiency and monitoring in transmission, voltage optimization in distribution system technologies, advanced metering infrastructure, and easier accessibility to energy usage data on the individual (consumer) level. \cite{cite energy.gov}. 
+Recent innovations in in statistical modeling, in particular data-driven optimization and machine learning, have severely overhauled the standard procedures and conventional lines of thinking for management of electricity on the grid. Interest in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}. \todo{more RL citations}. Closely related are the capacity to accurately monitor systems and detect real-time faults. According to Bloomberg New Energy finance, U.S. utilities invested approximately  \$3.4 billion in smart grid technologies at the distribution level, and since 2008, \$31.6 billion on the same, a much higher rate than initial forecasts. Smart grids promise to introduce several benefits on the control level, including increased efficiency and monitoring in transmission, voltage optimization in distribution system technologies, advanced metering infrastructure, and easier accessibility to energy usage data for individual consumers. \cite{cite energy.gov}. 
 
 
-According to a 2010 NIST report, the challenges to adoption of Smart Grid technology can be roughly categorized into three needs that must be fulfilled: 1) smart infrastructure, 2) smart management systems, and 3) smart protection \cite{moreno_escobar_comprehensive_2021-1}. Furthermore, investment and development in each of these areas must be considered carefully on the transmission and distribution level. We argue that the current state of optimization and control technologies, as well as the unique geographical load profile of the New York region, is amenable to seeing this vision to its fruition, outlined in the next four sections.
+According to a 2010 NIST report, the challenges to adoption of smart grid technology can be roughly categorized into three needs that must be fulfilled: 1) smart infrastructure, 2) smart management systems, and 3) smart protection \cite{moreno_escobar_comprehensive_2021-1}. Furthermore, investment and development in each of these areas must be considered carefully on the transmission and distribution level. We argue that the current state of optimization and control technologies, as well as the unique geographical load profile of the New York region, is amenable to seeing this vision to its fruition, outlined in the next four sections.
 
 \subsection{Smart infrastructure}
 Although NYSERDA has invested in approximately \$65 million in awards to support the development of a statewide smart grid, we claim this investment must be increased, particularly in supporting incremental and experimental changes on the distribution level. The primary focus should not be on construction of new buildings that conveniently support this technology, but accelerated "retrofitting" of existing buildings with smart meters, monitoring tools and residential interfaces for local clusters.
-Funds have been mostly divested in feasibility studies and research projects, which advance the technical side, but one of the main barriers to adoption is the lack of regulatory framework and low public awareness and engagement. Previous barriers to entry, such as the lack of open standards, cybersecurity and data privacy concerns, lack of infrastructure, and shortage of experts with relevant technical skills, have been significantly addressed within the last 5 years, due to the explosion in interest in machine learning and distributed systems and resultant efforts to enact regulations on data privacy and AI fairness \todo{cite source}.
+Furthermore, funds have been mostly divested in feasibility studies and research projects, which advance progress on breaking through the technical bottleneck, but we argue that the two main barriers to adoption at the present is the lack of regulatory framework and low public awareness and engagement. Previous barriers to entry, such as the lack of open standards, cybersecurity and data privacy concerns, and shortage of experts with relevant technical skills, have been significantly addressed within the last 5 years, due to the explosion in interest in machine learning and distributed systems and resultant efforts to enact regulations on data privacy and AI fairness \todo{cite source}.
 
 \subsection{Smart management systems}
 
 
 \subsection{Smart protection}
-Increasing standardization of mass data collection systems in the private and public sector have led to rising concerns of privacy and equity with respect to smart systems. 
+Increasing standardization of mass data collection systems in the private and public sector have led to rising concerns of privacy and equity with respect to smart systems. As mentioned before, however, efforts to introduce data privacy regulations in legislation, like the New York Privacy Act, and to foster public awareness and competence, have grown significantly over the last 10 years. \todo{cite source}. 
 
 \subsubsection{Microgrids}
-Several research institutes, including NREL, Berkeley Lab, Sandia National Laboratory, and the EPRI, have developed robust microgrid simulation software capable of multiobjective optimization and a systems engineering approach to modeling complex electrical and thermal energy demand requirements, both with respect to dynamics and economic feasibility. \todo{cite microgrid resources.org}. Furthermore, the emergence of DC technologies and proliferation of IoT devices will help smart grid systems scale naturally with existing infrastructure \todo{\cite microgrid resources.org}.
+Several research institutes, including NREL, Berkeley Lab, Sandia National Laboratory, and the EPRI, have developed robust microgrid simulation software capable of multiobjective optimization and a systems engineering approach to modeling complex electrical and thermal energy demand requirements, both with respect to dynamics and economic feasibility. \cite{feng_review_2018}. Furthermore, the emergence of DC technologies and proliferation of IoT devices will help smart grid systems scale naturally with existing infrastructure \cite{feng_review_2018}.
+
+\subsection{Power Inverters}
+
 
 \subsubsection{Other things to possibly include}
 \begin{enumerate}
-	\item statistics on how 
+	\item statistics on estimated impact of smart grids on energy efficiency and usage
+	\item statistics on number of IoT devices per household in New York
+	\item statistics to support increased interest in ML applications
+	\item statistics on why efforts should revolve around retrofitting
 \end{enumerate}
 \section{Quantitative Analysis}
-We first sought to characterize the energy load, demand, transmission and generation profiles on annual and monthly timescales, as well as obtain projected estimates until 2030. Figures of total energy consumption, generation, and consumption for electricity generation are shown in the figures below.
+We first sought to characterize the energy load, demand, transmission and generation profiles on annual and monthly timescales, as well as obtain projected estimates until 2030. Figures of total energy consumption, generation, and average retail price for electricity generation are shown below.
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.75\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{price_monthly.png}
+		\caption{}
+		\label{fig:}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.75\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{price_annual.png}
+		\caption{}
+		\label{fig:}
+	\end{subfigure}
+
+\end{figure}
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.75\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{gen_annual.png}
+		\caption{}
+		\label{fig:}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.75\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{gen_monthly.png}
+		\caption{}
+		\label{fig:}
+	\end{subfigure}
+
+\end{figure}
+
+
+
 
 \subsubsection{ARIMA}
-ARIMA, or AutoRegressive Integrated Moving Average, is a commonly used method for time series analysis. Due to the diurnal nature of electricity demand, we implemented a seasonal ARIMA model. Formally, ARIMA is described by the equations
+ARIMA, or AutoRegressive Integrated Moving Average, is a commonly used method for time series analysis. Due to the seasonal and diurnal nature of electricity demand, we implemented a seasonal ARIMA model. Formally, ARIMA is described by the equations
 \begin{align}
 &y_{t}^{*}=\Delta^{d} y_{t} \\
 &y_{t}^{*}=\mu+\underbrace{\sum_{i=1}^{p} \phi_{i} y_{t-i}^{*}}_{\mathrm{AR}}+\underbrace{\sum_{i=1}^{q} \theta_{i} \epsilon_{t-i}+\epsilon_{t}}_{\mathrm{MA}}
@@ -353,7 +388,6 @@ A seasonal arima model is of the form
 \begin{align}
 	\text{ARIMA}(p,q) \times (P,Q)_s
 .\end{align}
-
 
 where 
 
@@ -371,6 +405,14 @@ where $i$ denotes the input, $h$ denotes the output of the hidden layer, $o$ den
 \subsubsection{Support Vector Regression}
 
 Primal Formulation:
+
+\begin{mini}
+	{}
+	{\frac{1}{2}\|w\|^{2}+C \sum_{i=1}^{\ell}\left(\xi_{i}+\xi_{i}^{*}\right)}{}\\
+	\addConstraint{y_{i}-\left\langle w, x_{i}\right\rangle-b}{\le \epsilon + \xi_i}
+	\addConstraint{\langle w, x_i \rangle + b - y_i}{\le \epsilon + \xi_i^{*}}
+	\addConstraint{\xi_i, \xi_i^{*}}{\ge 0}
+\end{mini}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{svm_primal.PNG}
@@ -386,7 +428,7 @@ Dual Formulation:
 	\label{fig:}
 
 \end{figure}
-
+The results of the analysis is presented in figure \cite{fig ref}
 \subsubsection{Comparisons to Existing Models}
 
 
