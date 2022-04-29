@@ -218,12 +218,13 @@ if __name__ == "__main__":
     sns.set(style="whitegrid")
     # sns.set_color_codes("Spectral")
 
-    plt.figure(2, figsize=(15, 7))
+    plt.figure(figsize=(10, 5))
 
     sns.barplot(x=vals, y=labels, palette='Spectral')
 
     plt.xlabel("thousand MWh")
     plt.ylabel("Source")
+    plt.tight_layout()
 
-    plt.suptitle('NY State Net Electricity Generation by Source', fontsize=20)
-    plt.savefig('fig/elec_gen_by_source.png')
+    plt.title('NY State Net Electricity Generation by Source')
+    plt.savefig('fig/elec_gen_by_source.png', bbox_inches="tight")
