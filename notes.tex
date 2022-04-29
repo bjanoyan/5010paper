@@ -286,13 +286,24 @@ Aggressive federal support amenable to policy decision to focus on offshore wind
 \section{Background}
 The last two decades have brought marked improvements in energy efficient systems and infrastructure on a global scale. The penetration profile of electricity generation sources has seen a nationwide trend towards renewable and "clean" energy source -- offshore wind, nuclear, biofuels, and geothermal -- and a complementary shift away from traditional fossil fuels. 
 
-The NYISO region is uniquely characterized by the speed at which it has adopted -- and integrated -- new technologies and developed infrastructure. It remains the only coal free region in the US, and leads the nation in installed capacity of several renewable sources -- most notably offshore wind [cite NYSERDA]. With five offshore wind projects in active development, New York is touted as the nation's "hub" for offshore wind, projecting to deliver approximately 4300 MW from these facilities alone, with goals to extend that to 9000 MW by 2040 \todo{citation}. Quite remarkably, New York consumes less total energy per capita than all but two states, and \todo{a little more here?}.
+The NYISO region is uniquely characterized by the speed at which it has adopted -- and integrated -- new technologies and developed infrastructure. It remains the only coal free region in the US, and leads the nation in installed capacity of several renewable sources -- most notably offshore wind \cite{noauthor_new_nodate-1} \todo{check citation}. With five offshore wind projects in active development, New York is touted as the nation's "hub" for offshore wind, projecting to deliver approximately 4300 MW from these facilities alone, with goals to extend that to 9000 MW by 2040 \todo{citation}. Quite remarkably, New York consumes less total energy per capita than all but two states, and \todo{a little more here?}.
 
 While the NYISO has released a comprehensive plan towards 70\% renewable energy by 2030, and 100\% carbon-free electricity by 2040, 
 there are several areas which remain unexploited. Our work aims to assess these areas of untapped potential and improvements in policy that can be leveraged to accelerate progress towards this goal. We also provide a robust, quantitative analysis of projected energy demand and projected generation requirements needed to sustain this trend towards 100\% carbon-free electricity in the next eight years.
 
 \subsection{Statewide Energy Profile}
-New York has consistently met nearly 90\% of energy requirements through nuclear, hydropower and natural gas alone. [citation] 
+New York has consistently met nearly 90\% of energy requirements through nuclear, hydropower and natural gas alone. In 2020, New York accounted for nearly 11\% of U.S. hydroelectricity generation, and was the third largest producer of hydroelectricity in the nation \todo{citation}.Renewable resources were responsible for nearly 60\% of electricity generation alone that same year. Figure 1 shows the profile of electricity generation distributed across different sources as of March 2022. The 
+
+\missingfigure{}
+In recent years, the distribution has undergone a marked shift away from nuclear. Indian Point, responsible for nearly 25\% of the state's electricity generation \cite{mcgeehan_indian_2021}, of carbon free electricity, permanently shut down by April 2021. With a capacity factor of nearly 90\%, facility delivered reliable base load electricity across the state, and its closure produced a void of approximately 2000MW of nuclear generating capacity. Since then, the share of the state's power from gas-fired generators has increased, jumping nearly 6\% since the closure of its last unit (Indian Point Unit 3) in 2021. \todo{double check statistics}.
+\\
+With regards to the cost of electricity, average retail price is the 8th highest in the nation as of 2022, fluctuating between 20 and 22 cents per kWh.
+
+\subsubsection{Imports}
+For zones A-E receive hydro imports from the Quebec region, and the Tier 4 NYC project is responsible for serving downstate (zones F-K) load.
+\subsection{Current Plans}
+According to the Zero Emissions Electric grid in NY by 2040 study, New York is on track to meeting 70\% of electricity generation from renewables by 2030. Interestingly, zones A-E, serving all of upstate new york, are on track to having 100\% of emissions completely carbon free. \todo{cite NYSERDA}. The key bottleneck is in Zones F-K, which serve downstate and is projected to meet 80\% of its load with zero emissions resources by 2030. \todo{cite NYSERDA}.
+
 
 \begin{figure}[H]
 	\centering
@@ -321,9 +332,13 @@ New York has consistently met nearly 90\% of energy requirements through nuclear
 \subsection{Infrastructure}
 
 \subsection{Control}
-Recent innovations in in statistical modeling, in particular data-driven optimization and machine learning, have severely overhauled the standard procedures for management of electricity on the grid. 
+Recent innovations in in statistical modeling, in particular data-driven optimization and machine learning, have severely overhauled the standard procedures and conventional lines of thinking for management of electricity on the grid. Interest in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}. \todo{more RL citations}. According to Bloomberg New Energy finance, U.S. utilities invested approximately  \$3.4 billion in smart grid technologies at the distribution level, and since 2008, \$31.6 billion on the same, a much higher rate than initial forecasts. Smart grids promise to introduce several benefits on the control level, including increased efficiency and monitoring in transmission, voltage optimization in distribution system technologies, advanced metering infrastructure, and easier accessibility to energy usage data on the individual (consumer) level. \cite{cite energy.gov}
 
-Interst in smart-buildings and online optimization techniques for realtime energy usage has exploded \cite{yu_review_2021}, \cite{khan_modeling_2022}, \cite{sembroiz_planning_2019}, especially with the advent of reinforcement learning and robust model predictive control \cite{chen_efficient_2020}, \cite{yang_adaptive_2019}. \todo{more RL citations}. 
+
+According to a 2010 NIST report, the challenges to adoption of Smart Grid technology can be roughly categorized into three needs that must be fulfilled: 1) smart infrastructure, 2) smart management systems, and 3) smart protection \cite{moreno_escobar_comprehensive_2021-1}. We argue that the current state of optimization and control technologies is amenable to seeing this vision to its fruition, outlined in the next three sections.
+
+
+
 \section{Quantitative Analysis}
 We first sought to characterize the energy load, demand, transmission and generation profiles on annual and monthly timescales, as well as obtain projected estimates until 2030. 
 
